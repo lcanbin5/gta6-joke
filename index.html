@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GTA6 破解版 · 手机版 / 电脑版</title>
+<meta name="description" content="GTA6 全平台下载线路。">
+<style>
+  :root{
+    --bg:#06060b;
+    --panel:#0e0e18;
+    --panel2:#12121f;
+    --line:#242438;
+    --txt:#e9e9f4;
+    --dim:#8b8ba3;
+    --cyan:#4ff0ff;
+    --magenta:#ff2e88;
+    --gold:#ffd166;
+    --radius:16px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--txt);
+    font-family:"PingFang SC","Noto Sans SC","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+    line-height:1.6;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  body::before{
+    content:"";
+    position:fixed;inset:-20%;
+    background:
+      radial-gradient(circle at 20% 15%, rgba(79,240,255,.13), transparent 40%),
+      radial-gradient(circle at 82% 30%, rgba(255,46,136,.12), transparent 42%),
+      radial-gradient(circle at 50% 95%, rgba(255,209,102,.07), transparent 45%);
+    pointer-events:none;
+    z-index:0;
+    animation:drift 24s ease-in-out infinite alternate;
+  }
+  @keyframes drift{from{transform:translate3d(-1.5%,-1%,0)}to{transform:translate3d(1.5%,1.5%,0)}}
+
+  .wrap{position:relative;z-index:1;max-width:1120px;margin:0 auto;padding:0 20px}
+
+  /* 主视觉 */
+  .hero{padding:78px 0 46px;text-align:center;position:relative}
+  .eyebrow{
+    display:inline-block;
+    font-family:ui-monospace,Consolas,monospace;
+    font-size:12px;letter-spacing:.28em;text-transform:uppercase;
+    color:var(--cyan);
+    border:1px solid rgba(79,240,255,.3);
+    background:rgba(79,240,255,.06);
+    padding:6px 14px;border-radius:999px;
+    margin-bottom:24px;
+  }
+  h1{
+    font-size:clamp(76px,17vw,178px);
+    line-height:.9;
+    font-weight:900;
+    letter-spacing:-.035em;
+    background:linear-gradient(180deg,#fff 6%,#bcc5ff 46%,#666fae 100%);
+    -webkit-background-clip:text;background-clip:text;
+    color:transparent;
+    margin-bottom:16px;
+  }
+  .sub{
+    font-size:clamp(17px,2.8vw,24px);
+    font-weight:700;
+    color:#c9c9dd;
+    letter-spacing:.04em;
+    margin-bottom:12px;
+  }
+  .sub em{font-style:normal;color:var(--magenta)}
+  .lede{color:var(--dim);font-size:15px;max-width:520px;margin:0 auto 32px}
+
+  /* 下载按钮 */
+  .fake-btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:12px;
+    font-family:inherit;font-size:19px;font-weight:800;
+    color:#0a0a12;
+    background:linear-gradient(100deg,var(--gold),#ffe9a8 45%,var(--gold));
+    border:0;border-radius:14px;
+    padding:18px 34px;
+    cursor:pointer;
+    box-shadow:0 10px 34px rgba(255,209,102,.28),0 0 0 1px rgba(255,255,255,.12) inset;
+    transition:transform .18s ease,box-shadow .18s ease,filter .18s;
+  }
+  .fake-btn:hover{transform:translateY(-2px);box-shadow:0 16px 44px rgba(255,209,102,.38)}
+  .fake-btn:active{transform:translateY(0) scale(.985)}
+  .fake-btn.shake{animation:shake .42s cubic-bezier(.36,.07,.19,.97)}
+  @keyframes shake{
+    10%,90%{transform:translateX(-2px)}20%,80%{transform:translateX(4px)}
+    30%,50%,70%{transform:translateX(-7px)}40%,60%{transform:translateX(7px)}
+  }
+  .meta{color:#5c5c78;font-size:12.5px;margin-top:16px;letter-spacing:.02em}
+  .meta span{margin:0 7px;opacity:.5}
+
+  /* 链接区 */
+  .section{padding:26px 0 6px}
+  .section-title{
+    display:flex;align-items:baseline;gap:12px;
+    margin:44px 0 24px;
+    font-size:clamp(22px,3.4vw,30px);font-weight:900;letter-spacing:-.01em;
+  }
+  .section-title small{
+    font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);
+  }
+  .group{margin-bottom:38px}
+  .group-head{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+  .group-head h3{font-size:17px;font-weight:800}
+  .group-head .sub2{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+  .group-head .rule{flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(252px,1fr));gap:14px}
+  .card{
+    display:flex;align-items:center;gap:16px;
+    text-decoration:none;color:inherit;
+    background:linear-gradient(180deg,var(--panel2),var(--panel));
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:18px;
+    position:relative;overflow:hidden;
+    cursor:pointer;
+    transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease;
+  }
+  .card:hover{transform:translateY(-3px);border-color:rgba(79,240,255,.45);box-shadow:0 12px 34px rgba(0,0,0,.5)}
+  .card .num{
+    font-family:ui-monospace,Consolas,monospace;font-size:12px;color:#4a4a66;
+    align-self:flex-start;padding-top:3px;min-width:18px;
+  }
+  .card .body{flex:1;min-width:0}
+  .card .name{
+    font-size:22px;font-weight:900;letter-spacing:.02em;
+    display:flex;align-items:center;gap:9px;line-height:1.2;
+  }
+  .badge{
+    font-size:10px;font-weight:700;letter-spacing:.06em;
+    padding:3px 7px;border-radius:5px;
+    border:1px solid rgba(79,240,255,.35);color:var(--cyan);background:rgba(79,240,255,.08);
+    white-space:nowrap;
+  }
+  .badge.pc{color:var(--magenta);border-color:rgba(255,46,136,.35);background:rgba(255,46,136,.08)}
+  .badge.mirror{color:var(--gold);border-color:rgba(255,209,102,.35);background:rgba(255,209,102,.08)}
+  .card .url{
+    font-family:ui-monospace,Consolas,monospace;font-size:11.5px;color:#5f5f7d;
+    margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  }
+  .card .arrow{color:#3d3d55;font-size:18px;transition:color .2s,transform .2s}
+  .card:hover .arrow{color:var(--cyan);transform:translateX(3px)}
+
+  /* 页脚 */
+  footer{
+    margin-top:60px;padding:34px 0 54px;
+    border-top:1px solid var(--line);
+    color:#5b5b75;font-size:12.5px;line-height:1.9;
+  }
+  footer b{color:#8b8ba3}
+
+  /* Toast */
+  .toast{
+    position:fixed;left:50%;bottom:34px;transform:translate(-50%,24px);
+    background:#1b1b2b;border:1px solid #35354f;color:#fff;
+    padding:12px 22px;border-radius:12px;font-size:14px;font-weight:600;
+    opacity:0;pointer-events:none;transition:all .28s ease;z-index:200;
+    box-shadow:0 14px 40px rgba(0,0,0,.6);
+    max-width:calc(100vw - 40px);text-align:center;
+  }
+  .toast.show{opacity:1;transform:translate(-50%,0)}
+
+  /* Modal */
+  .modal{
+    position:fixed;inset:0;z-index:300;
+    display:flex;align-items:center;justify-content:center;padding:20px;
+    background:rgba(4,4,10,.78);
+    backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+    opacity:0;pointer-events:none;transition:opacity .22s ease;
+  }
+  .modal.show{opacity:1;pointer-events:auto}
+  .modal-card{
+    width:min(440px,100%);
+    background:linear-gradient(180deg,#151524,#0d0d16);
+    border:1px solid #2e2e46;border-radius:20px;
+    padding:30px 28px 24px;
+    text-align:center;
+    transform:translateY(14px) scale(.97);
+    transition:transform .26s cubic-bezier(.2,1.3,.4,1);
+    box-shadow:0 30px 80px rgba(0,0,0,.7);
+  }
+  .modal.show .modal-card{transform:none}
+  .modal-icon{font-size:38px;line-height:1;margin-bottom:12px}
+  .modal-card h3{font-size:19px;margin-bottom:12px;letter-spacing:.01em}
+  .modal-card p{font-size:13.5px;color:var(--dim);margin-bottom:6px}
+  .modal-card p.big{font-size:15px;color:#dcdcf0}
+  .modal-card p.big b{color:#fff}
+  .modal-card .host{
+    font-family:ui-monospace,Consolas,monospace;
+    font-size:12px;color:var(--cyan);margin:6px 0 18px;
+  }
+  .actions{display:flex;gap:10px;margin-top:20px}
+  .btn{
+    flex:1;font-family:inherit;font-size:15px;font-weight:700;
+    padding:12px 16px;border-radius:11px;cursor:pointer;border:1px solid transparent;
+    transition:filter .18s,transform .12s;
+  }
+  .btn:active{transform:scale(.98)}
+  .btn.primary{background:linear-gradient(100deg,var(--cyan),#9be9ff);color:#04222a}
+  .btn.primary:hover{filter:brightness(1.08)}
+  .btn.ghost{background:transparent;border-color:#33334c;color:#a5a5be}
+  .btn.ghost:hover{background:#1a1a2a}
+
+  @media (max-width:640px){
+    .hero{padding:56px 0 34px}
+    .fake-btn{font-size:16px;padding:15px 22px;width:100%}
+    .card{padding:15px}
+    .card .name{font-size:20px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="hero">
+    <div class="eyebrow">GTA VI · Cracked · Day One · 4K 240FPS</div>
+    <h1>GTA6</h1>
+    <p class="sub">破解版已出 · 全平台 · <em>4K 240 帧</em></p>
+    <p class="lede">选一个平台，挑一条最快的线路。</p>
+
+    <button class="fake-btn" id="fakeBtn">⬇ 立即下载 GTA6（206 GB）</button>
+    <p class="meta">
+      支持 4K 240 帧 <span>·</span> 神秘黑客天团联合出品 <span>·</span> 已有 1,048,576 人下载
+    </p>
+  </header>
+
+  <section class="section" id="real">
+    <h2 class="section-title">选择下载线路 <small>Download Mirrors</small></h2>
+    <div id="groups"></div>
+  </section>
+
+  <footer>
+    <p><b>关于本页：</b>这是一个整活页面，与 Rockstar Games、米哈游、库洛游戏均无任何关系。</p>
+    <p>所有链接都指向各游戏<b>官方网站</b>，不包含破解、私服、修改版或任何第三方下载。本页不收集任何信息，不加载任何外部资源。</p>
+    <p style="margin-top:12px">如果你是被朋友发链接骗进来的——恭喜，你只损失了 30 秒。</p>
+  </footer>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<div class="modal" id="confirm" aria-hidden="true">
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="cTitle">
+    <div class="modal-icon">🌐</div>
+    <h3 id="cTitle">即将离开本页</h3>
+    <p class="big" id="cWhere"></p>
+    <p class="host" id="cHost"></p>
+    <p id="cTruth"></p>
+    <div class="actions">
+      <button class="btn ghost" id="cCancel">取消</button>
+      <button class="btn primary" id="cOk">前往官网</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ---------- 线路数据 ---------- */
+  var GROUPS = [
+    {
+      title: "手机版",
+      sub: "Mobile",
+      badge: "手机版",
+      badgeCls: "",
+      items: [
+        { spec: "Android / iOS · 12.8 GB", url: "https://ys.mihoyo.com/",          host: "ys.mihoyo.com",       game: "原神",           region: "提瓦特大陆",  cta: "前往提瓦特" },
+        { spec: "Android / iOS · 14.2 GB", url: "https://sr.mihoyo.com/",          host: "sr.mihoyo.com",       game: "崩坏：星穹铁道", region: "星穹列车",    cta: "前往星穹列车" },
+        { spec: "Android / iOS · 11.6 GB", url: "https://zzz.mihoyo.com/m/main",   host: "zzz.mihoyo.com",      game: "绝区零",         region: "六分街",      cta: "前往六分街" },
+        { spec: "Android / iOS · 10.4 GB", url: "https://bh3.mihoyo.com/",         host: "bh3.mihoyo.com",      game: "崩坏3",          region: "圣芙蕾雅学园", cta: "前往圣芙蕾雅" }
+      ]
+    },
+    {
+      title: "电脑版",
+      sub: "PC",
+      badge: "电脑版",
+      badgeCls: "pc",
+      items: [
+        { spec: "Windows · 206 GB", url: "https://genshin.hoyoverse.com/zh-cn/",       host: "genshin.hoyoverse.com",       game: "原神",           region: "提瓦特大陆",  cta: "前往提瓦特" },
+        { spec: "Windows · 198 GB", url: "https://hsr.hoyoverse.com/zh-cn/",           host: "hsr.hoyoverse.com",           game: "崩坏：星穹铁道", region: "星穹列车",    cta: "前往星穹列车" },
+        { spec: "Windows · 176 GB", url: "https://zenless.hoyoverse.com/zh-cn/",       host: "zenless.hoyoverse.com",       game: "绝区零",         region: "六分街",      cta: "前往六分街" },
+        { spec: "Windows · 132 GB", url: "https://honkaiimpact3.hoyoverse.com/zh-cn/", host: "honkaiimpact3.hoyoverse.com", game: "崩坏3",          region: "圣芙蕾雅学园", cta: "前往圣芙蕾雅" }
+      ]
+    },
+    {
+      title: "备用链接",
+      sub: "Mirror",
+      badge: "",
+      badgeCls: "mirror",
+      items: [
+        { spec: "备用节点 · Android", url: "https://mc.kurogames.com/",            host: "mc.kurogames.com",            game: "鸣潮", region: "索拉里斯", cta: "前往索拉里斯", badge: "手机" },
+        { spec: "备用节点 · Windows", url: "https://wutheringwaves.kurogames.com/", host: "wutheringwaves.kurogames.com", game: "鸣潮", region: "索拉里斯", cta: "前往索拉里斯", badge: "电脑" }
+      ]
+    }
+  ];
+
+  /* ---------- 渲染 ---------- */
+  var groupsEl = document.getElementById("groups");
+  var idx = 0;
+
+  GROUPS.forEach(function (g) {
+    var sec = document.createElement("div");
+    sec.className = "group";
+
+    var head = document.createElement("div");
+    head.className = "group-head";
+    head.innerHTML =
+      "<h3>" + g.title + "</h3>" +
+      '<span class="sub2">' + g.sub + "</span>" +
+      '<span class="rule"></span>';
+    sec.appendChild(head);
+
+    var grid = document.createElement("div");
+    grid.className = "grid";
+
+    g.items.forEach(function (it) {
+      idx++;
+      var badgeText = it.badge || g.badge;
+      var badgeCls = it.badge ? "mirror" : g.badgeCls;
+
+      var a = document.createElement("a");
+      a.className = "card";
+      a.href = it.url;
+      a.rel = "noopener noreferrer";
+      a.innerHTML =
+        '<span class="num">' + String(idx).padStart(2, "0") + "</span>" +
+        '<span class="body">' +
+          '<span class="name">GTA6' +
+            (badgeText ? ' <span class="badge ' + badgeCls + '">' + badgeText + "</span>" : "") +
+          "</span>" +
+          '<span class="url">' + it.spec + "</span>" +
+        "</span>" +
+        '<span class="arrow">→</span>';
+
+      a.addEventListener("click", function (e) {
+        e.preventDefault();
+        openConfirm(it);
+      });
+
+      grid.appendChild(a);
+    });
+
+    sec.appendChild(grid);
+    groupsEl.appendChild(sec);
+  });
+
+  /* ---------- Toast ---------- */
+  var toastEl = document.getElementById("toast");
+  var toastTimer = null;
+
+  function toast(msg) {
+    toastEl.textContent = msg;
+    toastEl.classList.add("show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () {
+      toastEl.classList.remove("show");
+    }, 2200);
+  }
+
+  /* ---------- 弹窗 ---------- */
+  var confirmEl = document.getElementById("confirm");
+  var cWhere = document.getElementById("cWhere");
+  var cHost = document.getElementById("cHost");
+  var cTruth = document.getElementById("cTruth");
+  var cOk = document.getElementById("cOk");
+  var cCancel = document.getElementById("cCancel");
+  var pendingUrl = null;
+
+  function openConfirm(it) {
+    pendingUrl = it.url;
+    cWhere.innerHTML = "即将前往 <b>" + it.region + "</b>（《" + it.game + "》官网）";
+    cHost.textContent = it.host;
+    cTruth.innerHTML = "<b>真的没有 GTA6。</b>这也不是你想要的链接。";
+    cOk.textContent = it.cta;
+    confirmEl.classList.add("show");
+    confirmEl.setAttribute("aria-hidden", "false");
+  }
+
+  function closeConfirm() {
+    confirmEl.classList.remove("show");
+    confirmEl.setAttribute("aria-hidden", "true");
+    pendingUrl = null;
+  }
+
+  cOk.addEventListener("click", function () {
+    if (!pendingUrl) return closeConfirm();
+    var url = pendingUrl;
+    closeConfirm();
+    var w = null;
+    try { w = window.open(url, "_blank", "noopener"); } catch (err) { w = null; }
+    if (!w) window.location.href = url;   /* QQ/X5 拦截弹窗时退回当前页跳转 */
+  });
+  cCancel.addEventListener("click", closeConfirm);
+  confirmEl.addEventListener("click", function (e) {
+    if (e.target === confirmEl) closeConfirm();
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && confirmEl.classList.contains("show")) closeConfirm();
+  });
+
+  /* ---------- 下载按钮：重试几次后带到线路列表 ---------- */
+  var fakeBtn = document.getElementById("fakeBtn");
+  var clicks = 0;
+  var TEXTS = [
+    "⬇ 立即下载 GTA6（206 GB）",
+    "⏳ 节点繁忙，正在重试…",
+    "⏳ 换了条线路，还是繁忙…",
+    "⬇ 从下方选择下载线路"
+  ];
+  var TIPS = [
+    "正在连接下载节点…",
+    "节点繁忙，已自动重试",
+    "备用节点也满了",
+    "随便挑一条吧 ↓"
+  ];
+
+  fakeBtn.addEventListener("click", function () {
+    clicks++;
+    fakeBtn.classList.remove("shake");
+    void fakeBtn.offsetWidth;
+    fakeBtn.classList.add("shake");
+
+    var i = Math.min(clicks, TEXTS.length - 1);
+    fakeBtn.textContent = TEXTS[i];
+    toast(TIPS[i]);
+
+    if (clicks >= 3) {
+      setTimeout(function () {
+        document.getElementById("real").scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 420);
+    }
+  });
+})();
+</script>
+</body>
+</html>
